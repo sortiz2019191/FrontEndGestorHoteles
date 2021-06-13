@@ -1,0 +1,40 @@
+
+<div [@fadeIn] id="panP" class="  row justify-content-center align-items-center">
+    <div class=" row justify-content-center">
+            <h1 class="text-center">Usuarios</h1>      
+    </div>
+    <div id="search1">
+        <form class="justify-content-center">
+            <div class="form-group">
+                <input [(ngModel)]="search" type="search" name="search" class="form-control" placeholder="Buscar Usuario">
+            </div>
+        </form>
+    </div> 
+    <div id="panel" class="col-auto p-4 ">
+        <div id="panel2" >
+            <div class="row" *ngFor="let user of users | search: search">
+                <div class="form-group col-md-4 text-center">
+                    <img width="115" height="115" src="../../../assets/img/user.png" alt="user" >
+                </div>
+                <div class="form-group col-md-8 text-left">
+                    <label id="luname">Nombre</label>
+                    <label for="name">: {{user.name}}</label>
+                    <br>
+                    <label id="luuser">Username</label>
+                    <label for="username">: {{user.username}}</label>
+                    <br>
+                    <label id="lucorreo">Correo</label>
+                    <label for="email">: {{user.email}}</label>
+                    <br>
+                    <label id="lurol">Rol</label>
+                    <label for="role">: {{user.role}}</label>
+                    <br>
+                    <label id="luphone">Telefono</label>
+                    <label for="tel">: {{user.phone}}</label>
+                </div>
+                <p></p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

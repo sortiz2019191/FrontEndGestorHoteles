@@ -1,0 +1,32 @@
+#search1{
+    width:50%;
+}
+
+#agregar{
+    width: 15%;
+}
+
+
+#panel{
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 15px;
+    opacity: 0.9;
+    width: 60%;
+    margin-top:  45px;
+
+}
+
+#vermas{
+    width: 100%;
+}
+
+label{
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+
+input{
+    border-radius: 5px;
+}

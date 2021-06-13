@@ -1,0 +1,85 @@
+
+
+#agregar{
+    width: 15%;
+    margin-top:  45px;
+}
+
+h1{
+    border: 5px solid #ffff;
+    border-radius: 10px;
+    width: 25%;
+    color: #ffff;
+    margin-top:  45px;
+}
+
+#panel{
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 15px;
+    opacity: 0.9;
+    width: 40%;
+    margin-top:  45px;
+    margin-inline: 30px;
+}
+
+#vermas{
+    width: 100%;
+}
+
+label{
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+
+input{
+    border-radius: 5px;
+}
+/*
+#btns2{
+    
+}
+
+#btndelete{
+
+}
+
+#btnupdate{
+
+    margin-top:  190px;
+    
+}
+*/
+
+#nameone{
+    font-weight: bold;
+}
+#descriptionone{
+    font-weight: bold;
+}
+#typeone{
+    font-weight: bold;
+}
+
+#dateone{
+    font-weight: bold;
+}
+#btnone{
+    width: 120px;
+    margin-block: 15px;
+}
+
+#btntwo{
+    width: 120px;
+    margin-block: 15px;
+}
+
+#regresar{
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    color: ghostwhite;
+    opacity: 0.5;
+}

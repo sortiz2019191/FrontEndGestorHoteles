@@ -1,0 +1,35 @@
+<div [@fadeIn] class="m-0 vh-100 row justify-content-center align-items-center">
+    <div class="col-auto  p-5 text-center">   
+        <div id="panP" class="row justify-content-center align-items-center">
+            <div class=" row justify-content-center">    
+            </div>
+            <div id="saveRoom" class="text-center"> 
+                <form #saveRoom="ngForm" (ngSubmit)="onSubmit(saveRoom)" id="form" class="form-wrap">
+                    <div class="info">
+                        <img width="115" height="115" class="mb-4" src="../../../assets/img/bed.png" alt="room">
+                        <h2>Agregar habitación</h2>   
+                        
+                    </div>
+                    <div class="form-room">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="sr-only" >Nombre</label>
+                                <input [(ngModel)]="room.name" name="nameHotel" #name="ngModel" class="form-control" type="text" id="inputName" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="sr-only" >Disponibilidad</label><br>
+                                <input  [(ngModel)]="room.available" name="available" #available="ngModel" class="form-control" type="text" id="inputAddress" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="sr-only" >Precio</label>
+                                <input [(ngModel)]="room.price" name="price" #price="ngModel" class="form-control" type="text" id="inputPhone" required> 
+                            </div>
+                        </div>
+                        <button id="guardar" type="submit" class="btn btn-primary mx-2">Añadir habitación</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,140 @@
+
+
+#panel{
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 15px;
+    opacity: 0.9;
+    width:40%;
+    margin-top:  190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search1{
+
+    align-items: center;
+
+}
+
+h1{
+    border: 5px solid #ffff;
+    border-radius: 10px;
+    width: 25%;
+    color: #ffff;
+    margin-top:  45px;
+}
+
+
+button{
+    margin-top: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: darkcyan;
+}
+
+button:hover{
+    transition: all 1s;
+    background-color:#A6ACAF;
+}
+
+.evento {
+    background-color: cornflowerblue;
+}
+
+.habitacion{
+    background-color:#118DAB ;
+}
+
+button{
+    margin-top: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: darkcyan;
+}
+
+button:hover{
+    transition: all 1s;
+    background-color:#A6ACAF;
+}
+
+input{
+    width: 65%;
+    text-align: center;
+    align-items: center;
+}
+
+#busqueda{
+    margin-top: 5%;
+    justify-content: center;
+    height: 25px;
+
+}
+
+#lbl1{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 35px;
+    margin-top: 5%;
+    justify-content: center;
+    border-radius: 7px;
+    margin-inline: 30%;
+    margin-block: 30px;
+}
+
+#lbl2{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+    height: 35px;
+    margin-top: 5%;
+    border-radius: 7px;
+    margin-inline: 20%;
+    margin-block: 30px;
+}
+
+#hotelname{
+    font-weight: bold;
+    font-size: 19px;
+}
+
+#adress{
+    font-weight: bold; 
+}
+
+#phone{
+    font-weight: bold; 
+}
+
+#admin{
+    font-weight: bold; 
+}
+/*
+#rooms{
+    font-weight: bold; 
+}
+*/
+/*
+#btn1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 20%;
+    margin-block: 30px;   
+}
+
+#btn2{
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+#btn3{
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+*/

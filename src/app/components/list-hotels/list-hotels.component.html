@@ -1,0 +1,47 @@
+<div [@fadeIn] id="panP" class="row justify-content-center align-items-center">
+    <div class=" row justify-content-center">
+            <h1 class="text-center">Hoteles</h1>      
+    </div>
+    <div id="search1" class="align-items-right">
+        <form >
+            <div id="busqueda" class="row">
+                <div class="form-group col-md-18">
+                    <input [(ngModel)]="searchH" id="lbl1" type="search" name="searchH" class="form-control" placeholder="Nombre de hotel">
+                </div>
+                <div class="form-group col-md-6">
+                    <input [(ngModel)]="searchHD" id="lbl2" type="search" name="searchHD" class="form-control" placeholder="Dirección de Hotel">
+                </div>
+            </div>
+        </form>
+    </div> 
+    <div id="panel" class="col-auto p-4 ">
+        <div [@fadeIn] id="panel2" >
+            <div class="row" *ngFor="let hotel of hotels | searchH: searchH | searchHD:searchHD">
+                <div class="form-group col-md-4 text-center">
+                    <img width="115" height="115" src="../../../assets/img/hotel.png" alt="hotel" >
+                </div>
+                <div class="form-group col-md-8 text-left">
+                    
+                    <label id="hotelname" for="name">{{hotel.name}}</label>
+                    <br>
+                    <label id=adress>Dirección  </label>
+                    <label for="address">: {{hotel.address}}</label>
+                    <br>
+                    <label id=phone>Teléfono  </label>
+                    <label for="phone">: {{hotel.phone}}</label>
+                    <br>
+                    <label id=admin>Administrador  </label>
+                    <label for="admin">: {{hotel.admin}}</label>
+                    <br>
+                    <!--<label id=rooms>Habitaciones  </label>
+                    <label for="room">: {{hotel.room}}</label>-->
+                </div>
+                
+                <button class="btn btl-lg btn-primary btn-block text-right" (click)="goHotel(hotel)">Ver Hotel</button>
+                <p></p>
+                
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

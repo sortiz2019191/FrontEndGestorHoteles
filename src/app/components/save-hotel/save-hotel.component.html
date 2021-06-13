@@ -1,0 +1,35 @@
+<div [@fadeIn] id="panP" class="  row justify-content-center align-items-center">
+    <div class=" row justify-content-center">    
+    </div>
+    <div id="saveHotel" class="text-center">
+        <form #saveHotel="ngForm" (ngSubmit)="onSubmit(saveHotel)" id="form" class="form-wrap">
+            <div class="info">
+                <img width="115" height="115" class="mb-4" src="../../../assets/img/hotel.png" alt="user">
+                <h2>Agregar Hotel</h2>   
+                <button id="guardar" type="submit" class="btn btn-primary mx-2">Añadir Hotel</button>
+            </div>
+            <div class="form-hotel">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="sr-only" >Nombre Hotel</label>
+                        <input [(ngModel)]="hotel.name" name="nameHotel" #name="ngModel" class="form-control" type="text" id="inputName" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="sr-only" >Dirección</label><br>
+                        <input [(ngModel)]="hotel.address" name="address" #address="ngModel" class="form-control" type="text" id="inputAddress" required>
+                    </div><br><br>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="sr-only" >Teléfono</label>
+                        <input [(ngModel)]="hotel.phone" name="phone" #phone="ngModel" class="form-control" type="text" id="inputPhone" required> 
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="sr-only" >Administrador Hotel</label>
+                        <input [(ngModel)]="hotel.idAdminHotel" class="form-control" type="text" id="inputAdminHotel" required> 
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

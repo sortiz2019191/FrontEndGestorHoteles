@@ -1,0 +1,94 @@
+<button id="regresar" routerLink="/hotel" class="btn btl-lg btn-dark btn-block">Regresar</button>
+<div [@fadeIn] id="panP" class="row justify-content-center align-items-center">
+    <div class=" row justify-content-center">
+            <h1 class="text-center">Eventos</h1>      
+    </div>   
+    <div  class="row justify-content-center align-items-center">
+        <div class=" row justify-content-center">
+        <button *ngIf="user.role == 'ROLE_ADMIN' || user.role == 'ROLE_ADMIN_HOTEL'" id="agregar" routerLink="/saveEvent" class="btn btl-lg btn-success btn-block">Agregar evento</button>
+    </div>
+</div>
+    
+    <div id="panel" class="col-auto p-6 " *ngFor="let event of events">
+        <div [@fadeIn] id="panel2">
+            <div class="row">
+                <div class="form-group col-md-9 text-left">
+                  <form> 
+                    <label id="nameone">Nombre:</label>
+                    <label for="name"> {{event.name}}</label>
+                    <br>
+                    <label id="descriptionone">Descripción:</label>
+                    <label for="description">{{event.description}}</label>
+                    <br>
+                    <label id="typeone">Tipo:</label>
+                    <label for="type">  {{event.typeEvent}}</label>
+                    <br>
+                    <label id="dateone">Fecha:</label>
+                    <label for="date"> {{event.dateEvent}}</label>
+                    <br>
+                  </form>
+                </div>
+                <div id="btns1" class="form-group col-md-3  "> 
+                    <button id="btnone" *ngIf="user.role == 'ROLE_ADMIN' || user.role == 'ROLE_ADMIN_HOTEL'" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btl-lg btn-primary btn-block text-right" (click)= "getEvent(event)">Actualizar</button>
+                    <br>
+                    <button id="btntwo" *ngIf="user.role == 'ROLE_ADMIN' || user.role == 'ROLE_ADMIN_HOTEL'" data-bs-toggle="modal" data-bs-target="#delete" class="btn btl-lg btn-danger btn-block" (click)="getEvent(event)" >Eliminar</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Actualizar evento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+            <label for="name">Nombre:</label>
+            <br>
+            <input [(ngModel)]="eventSelected.name" name="name" type="text" >
+            <br>
+            <label for="description">Descripción:</label>
+            <br>
+            <input [(ngModel)]="eventSelected.description" name="description" type="text" >
+            <br>
+            <label for="type">Tipo:</label>
+            <br>
+            <input type="text" [(ngModel)]="eventSelected.typeEvent" name="type" >
+            <br>
+            <label for="date">Fecha:</label>
+            <br>
+            <input type="date" [(ngModel)]="eventSelected.dateEvent" name="date" >
+            <br>
+            
+        </div>
+        <div id="btns2" class="modal-footer">
+          <button  type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          <button  type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateEvent()" >Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="remove" aria-hidden="true">
+    <div class="modal-dialog modal-ml">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="remove">Autorización para eliminar Contacto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <span class="mt-5 mb-3 text-muted">Estas seguro que quieres eliminar tu evento {{eventSelected.name}}</span>
+            <h3>¡Esta accion es permanente!</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button"q data-bs-dismiss="modal" class="btn btn-danger" (click)="removeEvent()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,104 @@
+<div [@fadeIn] class="m-0 vh-100 row justify-content-center align-items-center">
+    <div class="  text-center">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="updateUser && message">
+            Acualización de datos correcta
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <div id="user" class="text-center">
+            <form id="form" class="form-wrap" #updateUser="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="info">
+                        <img *ngIf="user.image && user.image != 'null'" class="mb-4" src="{{uri +'getImage/'+user.image}}" alt="" width="72" height="72">
+                        <h2>Editar usuario</h2>   
+                        <button id="guardar" type="submit" class="btn btn-primary mx-2" [disabled]="!updateUser.form.valid">
+                            Actualizar Usuario
+                        </button>
+                        <button id="eliminar" class="btn btl-lg btn-danger btn-block" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Eliminar Usuario
+                        </button> 
+                        <button id="uploadUser" type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#myModal">
+                            Subir Foto
+                        </button>
+                    </div>
+                    <div class="form-user">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="sr-only" >Nombre</label>
+                                <input [(ngModel)]="user.name" name="name" #name="ngModel" class="form-control" type="text" id="inputUsuario" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="sr-only" >Apellido</label>
+                                <input [(ngModel)]="user.lastname" name="lastname" #lastname="ngModel" class="form-control" type="text" id="inputUsuario" required><br>
+                            </div>
+                        </div>
+                        <label class="sr-only" >País de origen</label>
+                        <input [(ngModel)]="user.country" name="country" #country="ngModel" class="form-control" type="text" id="inputPais"><br>
+                        <div class="row">
+                        <div class="form-group col-md-6">
+                            <label  class="sr-only" >Username</label>
+                            <input [(ngModel)]="user.username" name="username" #username="ngModel" class="form-control" type="text" id="inputUsuario" required> 
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="sr-only" >Teléfono</label>
+                            <input [(ngModel)]="user.phone" name="phone" #phone="ngModel" class="form-control" type="text" id="inputNumero"><br>
+                        </div>
+                    </div>
+                        <label>Email</label>
+                        <input [(ngModel)]="user.email" name="email" #email="ngModel"  class="form-control" type="email" id="inputEmail" required><br>
+                        <label>Edad</label>
+                        <input [(ngModel)]="user.age" name="age" #age="ngModel" class="form-control" type="date" id="inputUsuario"> 
+                    </div>
+            </form>
+
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="myModalLabel">User image</h5>
+                      <button type="button" class="close" databs-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                     <div class="modal-body">
+                      <h3>Upload your image</h3>
+                      <form #formImage="ngForm">
+                        <label for="imageInput"></label>
+                        <input type="file" name="image" id="imageInput" (change)="fileChange($event)">
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" data-bs-dismiss="modal" class="btn btn-primary" [disabled]="!formImage.form.valid" (click)="uploadImage()">Upload Image</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Autorización para eliminar cuenta</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span class="mt-5 mb-3 text-muted">Estas Seguro que quieres eliminar tu cuenta </span>
+                        <h3>Esta accion es permanente!</h3>
+                        <span>Verifique su contraseña para continuar</span>
+                        <form #formRemoved="ngForm">
+                            <label for="passwordRemoved"></label>
+                            <input [(ngModel)]="possiblePass" type="password" id="passwordRemoved" name="passwordRemoved" required>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button"q data-bs-dismiss="modal" class="btn btn-danger" [disabled]="!formRemoved.form.valid" (click)="deleteAccount()">I'm sure</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+</div>  
+
+
+

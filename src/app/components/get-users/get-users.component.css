@@ -1,0 +1,37 @@
+
+#panel{
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 15px;
+    opacity: 0.9;
+    width: 60%;
+    height: 75%;
+}
+
+h1{
+    border: 5px solid #ffff;
+    border-radius: 10px;
+    width: 25%;
+    color: #ffff;
+}
+
+
+
+
+
+
+
+
+
+button{
+    margin-top: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: darkcyan;
+}
+
+button:hover{
+    transition: all 1s;
+    background-color:#A6ACAF;
+}

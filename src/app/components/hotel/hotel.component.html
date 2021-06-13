@@ -1,0 +1,88 @@
+<div [@fadeIn] class="m-0 vh-100 row justify-content-center align-items-center">
+    <div class="text-center">
+        <div id="user" class="text-center">
+            <form id="form" class="form-wrap" #updateHotel="ngForm" (ngSubmit)="onSubmit()">
+                <div class="info">
+                    <img width="115" height="115" class="mb-4" src="../../../assets/img/hotel.png" alt="hotel">
+                    
+                    <button id="btnupdate1" type="submit" class="btn btn-primary mx-2" [disabled]="!updateHotel.form.valid">Agregar reservación</button>
+                    <button id="btnroom1" class="btn btl-lg btn-danger btn-block text-right habitacion" (click)="goRoom(hotel)">Ver habitaciones</button>
+                    <button id="btnevent1" class="btn btl-lg btn-success btn-block text-right evento" (click)="goEvent(hotel)">Ver eventos</button>
+                    <button id="btnback1" class="btn btl-lg btn-danger btn-block" type="button" (click)="returnToList()">Regresar</button> 
+                </div>
+                <div class="form-user">
+                    <div class="row">
+
+                        <div id="hotelname">
+                            <h2>{{hotel.name}}</h2>
+                        </div>   
+                        <div id="phoneinfo" class="form-group col-md-6">
+                            <h4>Dirección</h4>
+                            <label class="sr-only" >{{hotel.address}}</label>
+                        </div>
+                        <div id="addressinfo" class="form-group col-md-6">
+                            <h4>Teléfono</h4>
+                            <label class="sr-only" >{{hotel.phone}}</label>
+                        </div>
+                        
+                        <div id="admininfo" class="form-group">
+                            <h4>Administrador</h4>
+                            <label class="sr-only" > {{hotel.idAdminHotel}}</label>
+                        </div>
+                        
+                        <button *ngIf="user.role == 'ROLE_ADMIN'" id="btnadmin" class="btn btl-lg btn-danger btn-block" type="button" data-bs-toggle="modal" data-bs-target="#agregarAdmini" (click)="listUsers()" >Agregar administrador</button> 
+                        <div></div>
+                        <!--
+                        <div class="form-group col-md-6">
+                            <h4>Habitaciones</h4>
+                            <label class="sr-only" >{{hotel.room}}</label>
+                        </div>                            
+                        <div class="form-group col-md-6">
+                            <h4>Eventos</h4>
+                            <label class="sr-only" >{{hotel.event}}</label>
+                        </div>-->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>  
+
+
+<div class="modal fade" id="agregarAdmini" tabindex="-1" aria-labelledby="adminH" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="adminH">Administradores de Hoteles</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row" *ngFor="let user of users | searchR: 'ROLE_ADMIN_HOTEL'">
+                <div class="form-group col-md-4 text-center">
+                    <img id="userimg" width="115" height="115" src="../../../assets/img/user.png" alt="user" >
+                </div>
+                <form>
+                    <div id="modalbjcts" class="form-group col-md-8 text-right">
+                        <label id="namemodal">Nombre</label>
+                        <label for="name">: {{user.name}}, {{user.lastname}}</label>
+                        <br>
+                        <label id="usermodal">Username</label>
+                        <label for="username">: {{user.username}}</label>
+                        <br>
+                        <label id="correomodal">Correo</label>
+                        <label for="email">: {{user.email}}</label>
+                    </div>
+                </form>
+                <button id="btnslect" class="btn btl-lg btn-primary btn-block text-right" (click)="onSubmit()">Elige</button>
+                <p></p>
+                <hr>
+            </div>
+        </div>
+        <!--
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>-->
+      </div>
+    </div>
+  </div>

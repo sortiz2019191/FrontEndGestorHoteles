@@ -1,0 +1,79 @@
+
+
+#panel{
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 15px;
+    opacity: 0.9;
+    width: 60%;
+    margin-top:  45px;
+
+}
+
+#search1{
+    width:50%;
+    height: 25px;
+}
+
+h1{
+    border: 5px solid #ffff;
+    border-radius: 10px;
+    width: 25%;
+    color: #ffff;
+    margin-top:  45px;
+}
+
+
+button{
+    margin-top: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: darkcyan;
+}
+
+button:hover{
+    transition: all 1s;
+    background-color:#A6ACAF;
+}
+
+
+
+
+
+
+
+
+button{
+    margin-top: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: darkcyan;
+}
+
+button:hover{
+    transition: all 1s;
+    background-color:#A6ACAF;
+}
+
+#luname{
+    font-weight: bold;  
+}
+
+#luuser{
+    font-weight: bold;  
+}
+
+#lucorreo{
+    font-weight: bold;  
+}
+
+#lurol{
+    font-weight: bold;  
+}
+
+#luphone{
+    font-weight: bold;  
+}
+
+
